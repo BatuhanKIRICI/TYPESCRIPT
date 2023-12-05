@@ -1,10 +1,17 @@
-// let values: (string | number | boolean)[] = [1, 89, "jack", "david", true];
-let values: Array<string | number | boolean> = [1, 89, "jack", "david", true];
+type person = {
+  firstName: string;
+  lastName: string;
+  age: number;
+  jobTitle: string;
+};
 
-// const value: any = values[4];
+let teacher: person;
 
-// console.log(value);
+teacher = {
+  firstName: "Keith",
+  lastName: "Smith",
+  age: 25,
+  jobTitle: "Software Engineer",
+};
 
-for (let i = 0; i < values.length; i++) {
-  console.log(values[i]);
-}
+console.log(teacher.jobTitle);
