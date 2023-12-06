@@ -1,13 +1,7 @@
-function total(a: number, b: number, c?: number): number {
-  if (typeof c !== "undefined") {
-    return a * b * c;
-  } else {
-    return a * b;
-  }
+function accumulator(...numbers: number[]): number {
+  let total = 0;
+  numbers.forEach((number) => (total += number));
+  return total;
 }
 
-// console.log(total(5, 6));
-
-const multiply = (x: number, y: number): number => x * y;
-
-console.log(multiply(8, 9));
+console.log(accumulator(5, 10, 45, 100, -70));

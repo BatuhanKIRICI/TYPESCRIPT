@@ -1,11 +1,10 @@
-function total(a, b, c) {
-    if (typeof c !== "undefined") {
-        return a * b * c;
+function accumulator() {
+    var numbers = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        numbers[_i] = arguments[_i];
     }
-    else {
-        return a * b;
-    }
+    var total = 0;
+    numbers.forEach(function (number) { return (total += number); });
+    return total;
 }
-// console.log(total(5, 6));
-var multiply = function (x, y) { return x * y; };
-console.log(multiply(8, 9));
+console.log(accumulator(5, 10, 45, 100, -70));
