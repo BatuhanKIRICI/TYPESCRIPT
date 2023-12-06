@@ -1,7 +1,20 @@
-function accumulator(...numbers: number[]): number {
-  let total = 0;
-  numbers.forEach((number) => (total += number));
-  return total;
+class Person {
+  id: number;
+  firstName: string;
+  lastName: string;
+
+  constructor(my_id: number, my_firstName: string, my_lastName: string) {
+    this.id = my_id;
+    this.firstName = my_firstName;
+    this.lastName = my_lastName;
+  }
+
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
 }
 
-console.log(accumulator(5, 10, 45, 100, -70));
+let personInfo = new Person(45, "Gary", "Zimmermann");
+
+console.log(personInfo);
+console.log(personInfo.getFullName());

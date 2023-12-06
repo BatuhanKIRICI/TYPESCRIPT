@@ -1,10 +1,14 @@
-function accumulator() {
-    var numbers = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        numbers[_i] = arguments[_i];
+var Person = /** @class */ (function () {
+    function Person(my_id, my_firstName, my_lastName) {
+        this.id = my_id;
+        this.firstName = my_firstName;
+        this.lastName = my_lastName;
     }
-    var total = 0;
-    numbers.forEach(function (number) { return (total += number); });
-    return total;
-}
-console.log(accumulator(5, 10, 45, 100, -70));
+    Person.prototype.getFullName = function () {
+        return "".concat(this.firstName, " ").concat(this.lastName);
+    };
+    return Person;
+}());
+var personInfo = new Person(45, "Gary", "Zimmermann");
+console.log(personInfo);
+console.log(personInfo.getFullName());
