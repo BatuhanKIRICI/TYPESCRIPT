@@ -10,5 +10,7 @@ var Person = /** @class */ (function () {
     return Person;
 }());
 var personInfo = new Person(45, "Gary", "Zimmermann");
-console.log(personInfo);
+console.log(personInfo.id);
+console.log(personInfo.firstName);
+console.log(personInfo.lastName);
 console.log(personInfo.getFullName());
