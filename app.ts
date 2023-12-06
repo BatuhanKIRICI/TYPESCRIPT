@@ -1,17 +1,16 @@
-type person = {
-  firstName: string;
-  lastName: string;
-  age: number;
-  jobTitle: string;
-};
+enum Media {
+  Newspaper = 1,
+  Newsletter,
+  Magazine,
+  Book,
+}
 
-let teacher: person;
+enum PrintMedia {
+  Newspaper = "NEWSPAPER",
+  Newsletter = "NEWSLETTER",
+  Magazine = "MAGAZINE",
+  Book = "BOOK",
+}
 
-teacher = {
-  firstName: "Keith",
-  lastName: "Smith",
-  age: 25,
-  jobTitle: "Software Engineer",
-};
-
-console.log(teacher.jobTitle);
+console.log(PrintMedia.Book);
+console.log(PrintMedia["Magazine"]);
