@@ -1,16 +1,11 @@
-enum Media {
-  Newspaper = 1,
-  Newsletter,
-  Magazine,
-  Book,
+interface Employee {
+  name: string;
+  code: number;
 }
 
-enum PrintMedia {
-  Newspaper = "NEWSPAPER",
-  Newsletter = "NEWSLETTER",
-  Magazine = "MAGAZINE",
-  Book = "BOOK",
-}
+let employee = <Employee>{};
 
-console.log(PrintMedia.Book);
-console.log(PrintMedia["Magazine"]);
+employee.name = "Jason";
+
+console.log(typeof employee);
+console.log(employee);
