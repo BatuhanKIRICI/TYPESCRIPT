@@ -1,11 +1,13 @@
-interface Employee {
-  name: string;
-  code: number;
+function total(a: number, b: number, c?: number): number {
+  if (typeof c !== "undefined") {
+    return a * b * c;
+  } else {
+    return a * b;
+  }
 }
 
-let employee = <Employee>{};
+// console.log(total(5, 6));
 
-employee.name = "Jason";
+const multiply = (x: number, y: number): number => x * y;
 
-console.log(typeof employee);
-console.log(employee);
+console.log(multiply(8, 9));
