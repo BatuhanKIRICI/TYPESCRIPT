@@ -1,6 +1,6 @@
 class Person {
   public id: number;
-  firstName: string;
+  readonly firstName: string;
   protected lastName: string;
 
   constructor(my_id: number, my_firstName: string, my_lastName: string) {
@@ -17,6 +17,7 @@ class Person {
 let personInfo = new Person(45, "Gary", "Zimmermann");
 
 console.log(personInfo.id);
+personInfo.firstName = "Anthony";
 console.log(personInfo.firstName);
 console.log(personInfo.lastName);
 console.log(personInfo.getFullName());
