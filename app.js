@@ -1,42 +1,8 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Department = /** @class */ (function () {
-    function Department(name) {
-        this.name = name;
-    }
-    Department.prototype.printName = function () {
-        console.log("Department name: " + this.name);
-    };
-    return Department;
-}());
-var AccountingDepartment = /** @class */ (function (_super) {
-    __extends(AccountingDepartment, _super);
-    function AccountingDepartment() {
-        return _super.call(this, "Accounting and Auditing") || this;
-    }
-    AccountingDepartment.prototype.printMeeting = function () {
-        console.log("Abstract");
-    };
-    AccountingDepartment.prototype.generateReports = function () {
-        console.log("Generate");
-    };
-    return AccountingDepartment;
-}(Department));
-var department;
-department = new AccountingDepartment();
-department.printName();
-department.generateReports();
-department.printMeeting();
+function getInfo(person) {
+    return "".concat(person.firstName, " ").concat(person.lastName);
+}
+var info = {
+    firstName: "Luke",
+    lastName: "Lowry",
+};
+console.log(getInfo(info));

@@ -1,30 +1,15 @@
-abstract class Department {
-  constructor(public name: string) {}
-
-  printName(): void {
-    console.log("Department name: " + this.name);
-  }
-
-  abstract printMeeting(): void;
+interface Person {
+  firstName: string;
+  lastName: string;
 }
 
-class AccountingDepartment extends Department {
-  constructor() {
-    super("Accounting and Auditing");
-  }
-  printMeeting(): void {
-    console.log("Abstract");
-  }
-
-  generateReports(): void {
-    console.log("Generate");
-  }
+function getInfo(person: Person) {
+  return `${person.firstName} ${person.lastName}`;
 }
 
-let department: Department;
+let info = {
+  firstName: "Luke",
+  lastName: "Lowry",
+};
 
-department = new AccountingDepartment();
-
-department.printName();
-department.generateReports();
-department.printMeeting();
+console.log(getInfo(info));
