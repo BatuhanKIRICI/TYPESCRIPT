@@ -1,33 +1,19 @@
-class Person {
-  id: number;
-  firstName: string;
-  lastName: string;
+class Circle {
+  static pi = 3.14;
+  pi = 3;
 
-  constructor(my_id: number, my_firstName: string, my_lastName: string) {
-    this.id = my_id;
-    this.firstName = my_firstName;
-    this.lastName = my_lastName;
+  constructor() {
+    this.pi++;
+    Circle.pi++;
   }
 
-  getFullName() {
-    return `${this.firstName} ${this.lastName}`;
+  static calculate(radius: number): number {
+    return this.pi * radius * radius;
   }
 }
 
-class Employee extends Person {
-  constructor(id: number, firstName: string, lastName: string) {
-    super(id, firstName, lastName);
-  }
-}
+let circle = new Circle();
 
-let employee = new Employee(50, "Adam", "Smith");
+console.log(circle);
 
-console.log(employee.getFullName());
-
-// let personInfo = new Person(45, "Gary", "Zimmermann");
-
-// console.log(personInfo.id);
-// personInfo.firstName = "Anthony";
-// console.log(personInfo.firstName);
-// console.log(personInfo.lastName);
-// console.log(personInfo.getFullName());
+console.log(Circle.calculate(10));
