@@ -1,19 +1,30 @@
-class Circle {
-  static pi = 3.14;
-  pi = 3;
+abstract class Department {
+  constructor(public name: string) {}
 
-  constructor() {
-    this.pi++;
-    Circle.pi++;
+  printName(): void {
+    console.log("Department name: " + this.name);
   }
 
-  static calculate(radius: number): number {
-    return this.pi * radius * radius;
+  abstract printMeeting(): void;
+}
+
+class AccountingDepartment extends Department {
+  constructor() {
+    super("Accounting and Auditing");
+  }
+  printMeeting(): void {
+    console.log("Abstract");
+  }
+
+  generateReports(): void {
+    console.log("Generate");
   }
 }
 
-let circle = new Circle();
+let department: Department;
 
-console.log(circle);
+department = new AccountingDepartment();
 
-console.log(Circle.calculate(10));
+department.printName();
+department.generateReports();
+department.printMeeting();
