@@ -1,20 +1,14 @@
-interface Person {
-  name: string;
-  id: number;
+type variety = string | number;
+
+function add(a: variety, b: variety) {
+  if (typeof a === "number" && typeof b === "number") {
+    return a + b;
+  } else if (typeof a === "string" && typeof b === "string") {
+    return a.concat(b);
+  }
+  throw new Error("Please try again!");
 }
 
-interface Contact {
-  phone: number;
-  email: string | number;
-}
+console.log(add(5, 9));
 
-type Employee = Person | Contact;
-
-let person: Employee = {
-  name: "Bill",
-  // id: 23,
-  phone: 46568787132,
-  email: `dfbnflbknfklf@hotmail.com`,
-};
-
-console.log(person);
+console.log(add("Miguel ", "Verdugo"));
