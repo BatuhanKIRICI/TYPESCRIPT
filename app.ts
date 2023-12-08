@@ -1,10 +1,10 @@
-function getRandom<T>(items: T[]): T {
-  let random = Math.floor(Math.random() * items.length);
-  return items[random];
+function merge<U extends object, V extends object>(a: U, b: V) {
+  return {
+    ...a,
+    ...b,
+  };
 }
 
-const strings = ["emily", "phil", "frank"];
-const numbers = [8, 65, 23, 9, 0];
+const obj = merge({ name: "Randall" }, { id: 33 });
 
-console.log(getRandom<string>(strings));
-console.log(getRandom(numbers));
+console.log(obj);
