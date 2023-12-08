@@ -1,16 +1,20 @@
-function getInfo(person) {
-    if (person.middleName) {
-        return "".concat(person.firstName, " ").concat(person.middleName, " ").concat(person.lastName);
-    }
-    else {
-        return "".concat(person.firstName, " ").concat(person.lastName);
-    }
-}
-var info = {
-    firstName: "Luke",
-    lastName: "Lowry",
-    middleName: "Lynn",
+var employee = {
+    empNumber: 45,
+    gender: "male",
+    name: "Sammy",
 };
-info.firstName = "Lucas";
-info.middleName = "";
-console.log(getInfo(info));
+var department = {
+    gender: "female",
+    name: "Lily",
+    empDepartment: "HR",
+};
+console.log(employee);
+console.log(department);
+var Employee = /** @class */ (function () {
+    function Employee(empNumber, name, gender) {
+        (this.empNumber = empNumber), (this.name = name), (this.gender = gender);
+    }
+    return Employee;
+}());
+var person = new Employee(77, "Nathan", "male");
+console.log(person);

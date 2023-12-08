@@ -1,24 +1,40 @@
-interface Person {
-  readonly firstName: string;
-  lastName: string;
-  middleName?: string;
+interface IPerson {
+  name: string;
+  gender: string;
 }
 
-function getInfo(person: Person) {
-  if (person.middleName) {
-    return `${person.firstName} ${person.middleName} ${person.lastName}`;
-  } else {
-    return `${person.firstName} ${person.lastName}`;
+interface IEmployee extends IPerson {
+  empNumber: number;
+}
+
+interface IDepartment extends IPerson {
+  empDepartment: string;
+}
+
+let employee: IEmployee = {
+  empNumber: 45,
+  gender: "male",
+  name: "Sammy",
+};
+
+let department: IDepartment = {
+  gender: "female",
+  name: "Lily",
+  empDepartment: "HR",
+};
+
+console.log(employee);
+console.log(department);
+
+class Employee implements IPerson {
+  empNumber: number;
+  name: string;
+  gender: string;
+  constructor(empNumber: number, name: string, gender: string) {
+    (this.empNumber = empNumber), (this.name = name), (this.gender = gender);
   }
 }
 
-let info: Person = {
-  firstName: "Luke",
-  lastName: "Lowry",
-  middleName: "Lynn",
-};
+let person = new Employee(77, "Nathan", "male");
 
-info.firstName = "Lucas";
-info.middleName = "";
-
-console.log(getInfo(info));
+console.log(person);
