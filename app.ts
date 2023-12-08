@@ -1,14 +1,10 @@
-type variety = string | number;
-
-function add(a: variety, b: variety) {
-  if (typeof a === "number" && typeof b === "number") {
-    return a + b;
-  } else if (typeof a === "string" && typeof b === "string") {
-    return a.concat(b);
-  }
-  throw new Error("Please try again!");
+function getRandom<T>(items: T[]): T {
+  let random = Math.floor(Math.random() * items.length);
+  return items[random];
 }
 
-console.log(add(5, 9));
+const strings = ["emily", "phil", "frank"];
+const numbers = [8, 65, 23, 9, 0];
 
-console.log(add("Miguel ", "Verdugo"));
+console.log(getRandom<string>(strings));
+console.log(getRandom(numbers));
