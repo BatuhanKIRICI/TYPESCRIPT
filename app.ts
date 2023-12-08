@@ -1,40 +1,20 @@
-interface IPerson {
+interface Person {
   name: string;
-  gender: string;
+  id: number;
 }
 
-interface IEmployee extends IPerson {
-  empNumber: number;
+interface Contact {
+  phone: number;
+  email: string | number;
 }
 
-interface IDepartment extends IPerson {
-  empDepartment: string;
-}
+type Employee = Person | Contact;
 
-let employee: IEmployee = {
-  empNumber: 45,
-  gender: "male",
-  name: "Sammy",
+let person: Employee = {
+  name: "Bill",
+  // id: 23,
+  phone: 46568787132,
+  email: `dfbnflbknfklf@hotmail.com`,
 };
-
-let department: IDepartment = {
-  gender: "female",
-  name: "Lily",
-  empDepartment: "HR",
-};
-
-console.log(employee);
-console.log(department);
-
-class Employee implements IPerson {
-  empNumber: number;
-  name: string;
-  gender: string;
-  constructor(empNumber: number, name: string, gender: string) {
-    (this.empNumber = empNumber), (this.name = name), (this.gender = gender);
-  }
-}
-
-let person = new Employee(77, "Nathan", "male");
 
 console.log(person);
