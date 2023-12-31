@@ -1,26 +1,11 @@
-import axios from "axios";
+let colors: string[] = ["red", "green", "blue"];
+let things: boolean[] = [true, false];
 
-const url = "https://jsonplaceholder.typicode.com/todos/1";
+class Car {}
 
-interface Todo {
-  id: number;
-  title: string;
-  completed: boolean;
-}
+let car: Car = new Car();
 
-axios.get(url).then((response) => {
-  const todo = response.data as Todo;
-
-  const id = todo.id;
-  const title = todo.title;
-  const completed = todo.completed;
-
-  logTodo(id, title, completed);
-});
-
-const logTodo = (id: number, title: string, completed: boolean) => {
-  console.log(`
-    The todo with id: ${id}
-    Has a title of: ${title}
-    Is it completed? ${completed}`);
+let point: { x: number; y: number } = {
+  x: 10,
+  y: 20,
 };
