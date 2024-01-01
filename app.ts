@@ -29,3 +29,12 @@ for (let i = 0; i < words.length; i++) {
     foundWord = true;
   }
 }
+
+let numbers = [-12, -1, 56];
+let numberAboveZero: boolean | number = false;
+
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] > 0) {
+    numberAboveZero = numbers[i];
+  }
+}
