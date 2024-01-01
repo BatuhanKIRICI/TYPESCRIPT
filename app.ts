@@ -13,3 +13,9 @@ let point: { x: number; y: number } = {
 const logNumber: (i: number) => void = (i: number) => {
   console.log(i);
 };
+
+const info = '{"name":"Mike","age":25}';
+
+const parsedInfo: { name: string; age: number } = JSON.parse(info);
+
+console.log(parsedInfo);
