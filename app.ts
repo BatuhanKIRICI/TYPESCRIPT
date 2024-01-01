@@ -19,3 +19,13 @@ const info = '{"name":"Mike","age":25}';
 const parsedInfo: { name: string; age: number } = JSON.parse(info);
 
 console.log(parsedInfo);
+
+let words = ["red", "green", "blue"];
+
+let foundWord: boolean;
+
+for (let i = 0; i < words.length; i++) {
+  if (words[i] === "green") {
+    foundWord = true;
+  }
+}
